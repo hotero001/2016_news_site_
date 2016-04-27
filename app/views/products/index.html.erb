@@ -1,0 +1,259 @@
+<head>
+<meta charset='utf-8'>
+<link href='//fonts.googleapis.com/css?family=Raleway:400,300,600' rel='stylesheet' type='text/css'>
+<link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/normalize/3.0.2/normalize.min.css'>
+<link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/skeleton/2.0.4/skeleton.min.css'>
+
+<style type="text/css" media="all">
+  body { margin-top: 20px; }
+  body {margin-left: 50px; }
+  body {margin-right: 50px;}
+  body {margin-bottom: 20px;}
+
+  .boxes {
+    border: 5px solid #e6e6e6;
+    border-radius: 10px;
+    padding: 5px;
+    background-color: #e6e6e6;
+  }
+
+  #Menu,
+  #Menu ul {
+    list-style: none;
+    padding: 10px;
+  }
+  #Menu {
+    float: left;
+  }
+  #Menu > li {
+    float: left;
+  }
+  #Menu li a {
+    display: block;
+    height: 2em;
+    line-height: 2em;
+    padding: 0 1.5em;
+    text-decoration: none;
+  }
+  #Menu ul {
+    position: absolute;
+    display: none;
+    z-index: 999;
+  }
+  #Menu ul li a {
+    width: 80px;
+  }
+  #Menu li:hover ul {
+    display: block;
+  }
+</style>
+</head>
+
+<div class="container">
+  <ul id="Menu">
+    <a class="button button-primary" href="/presidential">Presidential</a>
+    <a class="button button-primary" href="/senate">Senate</a>
+    <a class="button button-primary" href="/congressional">Congressional</a>
+    <a class="button button-primary" href="/contact">Contact Us</a>
+  </ul>
+</div>
+
+<div class='markup'>
+  <div class='view-container container'>
+    <div class='landing-view'>
+      <center><h1>2016 GOP Elections</h1></center>
+      <center>
+      <%=image_tag("/assets/rsz_republican.png")%>
+      <%=image_tag("/assets/rsz_republican.png")%>
+      <%=image_tag("/assets/rsz_republican.png")%>
+      <%=image_tag("/assets/rsz_republican.png")%>
+      <%=image_tag("/assets/rsz_republican.png")%>
+      <%=image_tag("/assets/rsz_republican.png")%>
+      <%=image_tag("/assets/rsz_republican.png")%>
+      </center>
+    </div>
+  </div>
+</div>
+
+<div class="boxes">
+  <p><center>Welcome to 2016 GOP Elections. This is a site dedicated to covering republican candidates for the presidential race, republican incumbents in senate races, and republican incumbents in select competitive congressional races. Visit us for up to date news with the latest polls, news on debates, and breaking events.</center></p>
+</div>
+
+<% if logged_in? %>
+  <div class="nav_item">
+    <%=link_to "logged in post", products_presidential_path%>
+  </div><br/>
+  <div class="nav_item">
+    <%=link_to "log out", logout_path%>
+  </div>
+<%end%>
+
+<p id="notice"><%= notice %></p>
+
+<center>
+<div class="john" style="width:350px; border:1px solid #000; border-radius: 20px; background-color: #ff1a1a; color:#ffffff;">
+  <h2>Breaking Stories</h2>
+</div>
+</center>
+<br/><br/>
+ 
+<%#line below displays the actual image%>
+<%#<%=image_tag("/assets/#{product.image_url}")%>
+
+<%#TODO: refactor blocks below, to keep DRY%>
+<div class="headlines">
+  <div class="row">
+    <div class="one-half column" style="border: 5px solid #e6e6e6; border-radius: 10px; padding: 5px; background-color: #e6e6e6;">
+      <center>
+        <h3><%=@products[-1].title%></h3>
+      </center>
+      <center>
+      <%= link_to image_tag("/assets/#{@products[-1].image_url}"), @products[-1]%>
+      </center>
+      <center>
+        <h5><%=@products[-1].description%></h5>
+      </center>
+      <%if logged_in?%>
+        <td><%= link_to 'Show', @products[-1] %></td>
+        <td><%= link_to 'Edit', edit_product_path(@products[-1]) %></td>
+        <td><%= link_to 'Destroy', @products[-1], method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      <%end%>
+    </div>
+  <div class="one-half column" style="border: 5px solid #e6e6e6; border-radius: 10px; padding: 5px; background-color: #e6e6e6;">
+    <center>
+      <h3><%=@products[-2].title%></h3>
+    </center>
+    <center>
+    <%= link_to image_tag("/assets/#{@products[-2].image_url}"), @products[-2]%>
+    </center>
+    <center>
+      <h5><%=@products[-2].description%></h5>
+    </center>
+    <%if logged_in?%>
+      <td><%= link_to 'Show', @products[-2] %></td>
+      <td><%= link_to 'Edit', edit_product_path(@products[-2]) %></td>
+      <td><%= link_to 'Destroy', @products[-2], method: :delete, data: { confirm: 'Are you sure?' } %></td>
+    <%end%>
+  </div>
+</div>
+</div>
+<br/>
+<div class="headlines">
+  <div class="row">
+    <div class="one-half column" style="border: 5px solid #e6e6e6; border-radius: 10px; padding: 5px; background-color: #e6e6e6;">
+      <center>
+        <h3><%=@products[-3].title%></h3>
+      </center>
+      <center>
+      <%= link_to image_tag("/assets/#{@products[-3].image_url}"), @products[-3]%>
+      </center>
+      <center>
+        <h5><%=@products[-3].description%></h5>
+      </center>
+      <%if logged_in?%>
+        <td><%= link_to 'Show', @products[-3] %></td>
+        <td><%= link_to 'Edit', edit_product_path(@products[-3]) %></td>
+        <td><%= link_to 'Destroy', @products[-3], method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      <%end%>
+    </div>
+  <div class="one-half column" style="border: 5px solid #e6e6e6; border-radius: 10px; padding: 5px; background-color: #e6e6e6;">
+    <center>
+      <h3><%=@products[-4].title%></h3>
+    </center>
+    <center>
+    <%= link_to image_tag("/assets/#{@products[-4].image_url}"), @products[-4]%>
+    </center>
+    <center>
+      <h5><%=@products[-4].description%></h5>
+    </center>
+    <%if logged_in?%>
+      <td><%= link_to 'Show', @products[-4] %></td>
+      <td><%= link_to 'Edit', edit_product_path(@products[-4]) %></td>
+      <td><%= link_to 'Destroy', @products[-4], method: :delete, data: { confirm: 'Are you sure?' } %></td>
+    <%end%>
+  </div>
+</div>
+</div>
+<br/>
+<div class="headlines">
+  <div class="row">
+    <div class="one-half column" style="border: 5px solid #e6e6e6; border-radius: 10px; padding: 5px; background-color: #e6e6e6;">
+      <center>
+        <h3><%=@products[-5].title%></h3>
+      </center>
+      <center>
+      <%= link_to image_tag("/assets/#{@products[-5].image_url}"), @products[-5]%>
+      </center>
+      <center>
+        <h5><%=@products[-5].description%></h5>
+      </center>
+      <%if logged_in?%>
+        <td><%= link_to 'Show', @products[-5] %></td>
+        <td><%= link_to 'Edit', edit_product_path(@products[-5]) %></td>
+        <td><%= link_to 'Destroy', @products[-5], method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      <%end%>
+    </div>
+  <div class="one-half column" style="border: 5px solid #e6e6e6; border-radius: 10px; padding: 5px; background-color: #e6e6e6;">
+    <center>
+      <h3><%=@products[-6].title%></h3>
+    </center>
+    <center>
+    <%= link_to image_tag("/assets/#{@products[-6].image_url}"), @products[-6]%>
+    </center>
+    <center>
+      <h5><%=@products[-6].description%></h5>
+    </center>
+    <%if logged_in?%>
+      <td><%= link_to 'Show', @products[-6] %></td>
+      <td><%= link_to 'Edit', edit_product_path(@products[-6]) %></td>
+      <td><%= link_to 'Destroy', @products[-6], method: :delete, data: { confirm: 'Are you sure?' } %></td>
+    <%end%>
+  </div>
+</div>
+</div>
+<br/>
+<div class="headlines">
+  <div class="row">
+    <div class="one-half column" style="border: 5px solid #e6e6e6; border-radius: 10px; padding: 5px; background-color: #e6e6e6;">
+      <center>
+        <h3><%=@products[-7].title%></h3>
+      </center>
+      <center>
+      <%= link_to image_tag("/assets/#{@products[-7].image_url}"), @products[-7]%>
+      </center>
+      <center>
+        <h5><%= @products[-7].description%></h5>
+      </center>
+      <%if logged_in?%>
+        <td><%= link_to 'Show', @products[-7] %></td>
+        <td><%= link_to 'Edit', edit_product_path(@products[-7]) %></td>
+        <td><%= link_to 'Destroy', @products[-7], method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      <%end%>
+    </div>
+  <div class="one-half column" style="border: 5px solid #e6e6e6; border-radius: 10px; padding: 5px; background-color: #e6e6e6;">
+    <center>
+      <h3><%=@products[-8].title%></h3>
+    </center>
+    <center>
+    <%= link_to image_tag("/assets/#{@products[-8].image_url}"), @products[-8]%>
+    </center>
+    <center>
+      <h5><%=@products[-8].description%></h5>
+    </center>
+    <%if logged_in?%>
+      <td><%= link_to 'Show', @products[-8] %></td>
+      <td><%= link_to 'Edit', edit_product_path(@products[-8]) %></td>
+      <td><%= link_to 'Destroy', @products[-8], method: :delete, data: { confirm: 'Are you sure?' } %></td>
+    <%end%>
+  </div>
+</div>
+</div>
+<br/>
+
+<% if logged_in? %>
+  <%= link_to 'New Product', new_product_path %>
+<%end%>
+
+
+
+

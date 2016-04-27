@@ -1,0 +1,98 @@
+<head>
+<meta charset='utf-8'>
+<link href='//fonts.googleapis.com/css?family=Raleway:400,300,600' rel='stylesheet' type='text/css'>
+<link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/normalize/3.0.2/normalize.min.css'>
+<link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/skeleton/2.0.4/skeleton.min.css'>
+
+<style type="text/css" media="all">
+  body { margin-top: 20px; }
+  body {margin-left: 50px; }
+  body {margin-right: 50px;}
+  body {margin-bottom: 20px;}
+
+  .boxes {
+    border: 5px solid #e6e6e6;
+    border-radius: 10px;
+    padding: 5px;
+    background-color: #e6e6e6;
+  }
+
+  #Menu,
+  #Menu ul {
+    list-style: none;
+    padding: 10px;
+  }
+  #Menu {
+    float: left;
+  }
+  #Menu > li {
+    float: left;
+  }
+  #Menu li a {
+    display: block;
+    height: 2em;
+    line-height: 2em;
+    padding: 0 1.5em;
+    text-decoration: none;
+  }
+  #Menu ul {
+    position: absolute;
+    display: none;
+    z-index: 999;
+  }
+  #Menu ul li a {
+    width: 80px;
+  }
+  #Menu li:hover ul {
+    display: block;
+  }
+</style>
+</head>
+
+<div class="container">
+  <ul id="Menu">
+    <a class="button button-primary" href="/presidential">Presidential</a>
+    <a class="button button-primary" href="/">Home</a>
+    <a class="button button-primary" href="/congressional">Congressional</a>
+    <a class="button button-primary" href="/contact">Contact Us</a>
+  </ul>
+</div>
+
+<div class='markup'>
+  <div class='view-container container'>
+    <div class='landing-view'>
+      <center><h1>2016 GOP Elections</h1></center>
+      <center>
+      <%=image_tag("/assets/rsz_republican.png")%>
+      <%=image_tag("/assets/rsz_republican.png")%>
+      <%=image_tag("/assets/rsz_republican.png")%>
+      <%=image_tag("/assets/rsz_republican.png")%>
+      <%=image_tag("/assets/rsz_republican.png")%>
+      <%=image_tag("/assets/rsz_republican.png")%>
+      <%=image_tag("/assets/rsz_republican.png")%>
+      </center>
+    </div>
+  </div>
+</div>
+
+<br/>
+<center>
+<div class="john" style="width:350px; border:1px solid #000; border-radius: 20px; background-color: #ff1a1a; color:#ffffff;">
+  <h2>Senate Races</h2>
+</div>
+</center>
+<br/><br/>
+
+<div class="headlines">
+	<%@products.each do |product|%>
+    <div class="row">
+    	<%if product.category_id == 2%>
+        <center><div class="dog" style="width:850px; border: 5px solid #e6e6e6; border-radius: 50px; padding: 5px; background-color: #e6e6e6;">
+          <center><h2><%=product.title%></h2></center>
+          <center><%= link_to image_tag("/assets/#{@products[-7].image_url}"), @products[-7]%></center>
+          <center><h4><%=product.description%></h4></center>
+        </div></center><br/>
+      <%end%>
+    </div>
+  <%end%>
+</div>

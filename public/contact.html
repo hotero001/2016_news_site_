@@ -1,0 +1,116 @@
+<head>
+<meta charset='utf-8'>
+<link href='//fonts.googleapis.com/css?family=Raleway:400,300,600' rel='stylesheet' type='text/css'>
+<link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/normalize/3.0.2/normalize.min.css'>
+<link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/skeleton/2.0.4/skeleton.min.css'>
+
+<!--line below includes jQuery library for JavaScript -->
+<script src='https://code.jquery.com/jquery-2.1.4.min.js'></script>
+
+<style type="text/css" media="all">
+  body { margin-top: 20px; }
+  body {margin-left: 50px; }
+  body {margin-right: 50px;}
+  body {margin-bottom: 20px;}
+
+  .boxes {
+    border: 5px solid #e6e6e6;
+    border-radius: 10px;
+    padding: 5px;
+    background-color: #e6e6e6;
+  }
+
+  #Menu,
+  #Menu ul {
+    list-style: none;
+    padding: 10px;
+  }
+  #Menu {
+    float: left;
+  }
+  #Menu > li {
+    float: left;
+  }
+  #Menu li a {
+    display: block;
+    height: 2em;
+    line-height: 2em;
+    padding: 0 1.5em;
+    text-decoration: none;
+  }
+  #Menu ul {
+    position: absolute;
+    display: none;
+    z-index: 999;
+  }
+  #Menu ul li a {
+    width: 80px;
+  }
+  #Menu li:hover ul {
+    display: block;
+  }
+</style>
+</head>
+
+<div class="container">
+  <ul id="Menu">
+    <a class="button button-primary" href="/presidential">Presidential</a>
+    <a class="button button-primary" href="/senate">Senate</a>
+    <a class="button button-primary" href="/congressional">Congressional</a>
+    <a class="button button-primary" href="/">Home</a>
+  </ul>
+</div>
+
+<br/>
+
+<center><h3>Contact Us</h3></center>
+
+<p>Thank you for your interest in 2016GOPElections.com Please fill out and submit the form below and we will be in contact with you shortly.</p>
+
+<input type="text" placeholder="Name"></input><br/>
+<input type="text" placeholder="E-mail address"></input><br/>
+<textarea rows="5" cols="100" placeholder="Enter your message here..."></textarea>
+<div class="remaining">Characters remaining: <span class="count">500</span></div>
+<br/>
+<button id="boton" type="button" style="background-color: #e6e6e6; color: green;" >SUBMIT FORM</button>
+<br/>
+
+<script>
+  document.getElementById('boton').onclick = function() {
+    alert('Thank you for your input. Expect to hear from us shortly.');
+    window.location.reload();
+  };
+</script>
+
+<!--jquery for counting down the remaining characters in the text field-->
+<script>
+      $('.remaining').each(function(){
+      	  var $count = $('.count',this);
+      	  var $input = $(this).prev();
+
+      	  var maximumCount = $count.text()*1;
+      	  var update = function(){
+
+      	  	var before = $count.text()*1;
+      	  	var now = maximumCount - $input.val().length;
+
+      	  	if (now < 0){
+      	  		var str = $input.val()
+      	  		$input.val(str.substr(0,maximumCount));
+      	  		now = 0;
+      	  	}
+
+      	  	if (before != now) {
+      	  		$count.text(now);
+      	  	}
+
+      	  	document.getElementById("button").onclick = function() {
+      	  		alert("Thank your for your input. Expect to hear from us shortly.");
+      	  	};
+      	};
+      	$input.bind('input keyup paste', function(){setTimeout(update,0)
+        });
+      	update();
+    });
+</script>
+

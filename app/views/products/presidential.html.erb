@@ -1,0 +1,144 @@
+<head>
+<meta charset='utf-8'>
+<link href='//fonts.googleapis.com/css?family=Raleway:400,300,600' rel='stylesheet' type='text/css'>
+<link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/normalize/3.0.2/normalize.min.css'>
+<link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/skeleton/2.0.4/skeleton.min.css'>
+
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.js"></script>
+<script src='/vendor.js'></script>
+<script src='/raphael.js'></script>
+<script src='/jquery.usmap.js'></script>
+<script src='/color.jquery.js'></script>
+<script src='/app.js'></script>
+
+<style type="text/css" media="all">
+  body { margin-top: 20px; }
+  body {margin-left: 50px; }
+  body {margin-right: 50px;}
+  body {margin-bottom: 20px;}
+
+  .boxes {
+    border: 5px solid #e6e6e6;
+    border-radius: 10px;
+    padding: 5px;
+    background-color: #e6e6e6;
+  }
+
+  #Menu,
+  #Menu ul {
+    list-style: none;
+    padding: 10px;
+  }
+  #Menu {
+    float: left;
+  }
+  #Menu > li {
+    float: left;
+  }
+  #Menu li a {
+    display: block;
+    height: 2em;
+    line-height: 2em;
+    padding: 0 1.5em;
+    text-decoration: none;
+  }
+  #Menu ul {
+    position: absolute;
+    display: none;
+    z-index: 999;
+  }
+  #Menu ul li a {
+    width: 80px;
+  }
+  #Menu li:hover ul {
+    display: block;
+  }
+</style>
+</head>
+
+<div class="container">
+  <ul id="Menu">
+    <a class="button button-primary" href="/">Home</a>
+    <a class="button button-primary" href="/senate">Senate</a>
+    <a class="button button-primary" href="/congressional">Congressional</a>
+    <a class="button button-primary" href="/contact">Contact Us</a>
+  </ul>
+</div>
+
+<div class='markup'>
+  <div class='view-container container'>
+    <div class='landing-view'>
+      <center><h1>2016 GOP Elections</h1></center>
+      <center>
+      <%=image_tag("/assets/rsz_republican.png")%>
+      <%=image_tag("/assets/rsz_republican.png")%>
+      <%=image_tag("/assets/rsz_republican.png")%>
+      <%=image_tag("/assets/rsz_republican.png")%>
+      <%=image_tag("/assets/rsz_republican.png")%>
+      <%=image_tag("/assets/rsz_republican.png")%>
+      <%=image_tag("/assets/rsz_republican.png")%>
+      </center>
+    </div>
+  </div>
+</div>
+
+<br/>
+<center>
+<div class="john" style="width:350px; border:1px solid #000; border-radius: 20px; background-color: #ff1a1a; color:#ffffff;">
+  <h2>Presidential Race</h2>
+</div>
+</center>
+<br/><br/>
+
+<div class="top-stories">
+  <div class='one-third column'>
+    <h3><center>John Kasich</center></h3>
+    <center><%= image_tag "/assets/kasich.jpg"%></center>
+    <h4><center>Delegate Count: 148</center></h4>
+  </div>
+  <div class='one-third column'>
+    <h3><center>Donald Trump</center></h3>
+    <center><%= image_tag "/assets/trump.jpg"%></center> 
+    <h4><center>Delegate Count: 845</center></h4>
+  </div>
+  <div class='one-third column'>
+    <h3><center>Ted Cruz</center></h3>
+    <center><%= image_tag "/assets/CA.jpg"%></center>
+    <h4><center>Delegate Count: 559</center></h4>
+  </div>
+</div>
+
+<h3><center>Delegates Needed to Win Republican Nomination: 1237</center></h3>
+
+<br/><center>
+<div id="map" style="width: 500px; height: 300px;"></div>
+<div id="clicked-state"></div>
+</center>
+
+<script>
+$('#map').usmap({
+  // The click action
+  click: function(event, data){
+    $('#clicked-state')
+      //data.name+'kasich'
+      .text(data.name+' Delegate Results: TRUMP('+data.trump+')'+ '| CRUZ('+data.cruz+') '+'| KASICH('+data.kasich+')')
+      .parent().effect('highlight', {color: '#C7F464'}, 2000);
+  }
+});
+</script>
+
+<br/><br/><br/><br/>
+ 
+<div class="headlines">
+	<%@products.each do |product|%>
+    <div class="row">
+    	<%if product.category_id == 1%>
+        <center><div class="dog" style="width:850px; border: 5px solid #e6e6e6; border-radius: 50px; padding: 5px; background-color: #e6e6e6;">
+          <center><h2><%=product.title%></h2></center>
+          <center><%= link_to image_tag("/assets/#{@products[-7].image_url}"), @products[-7]%></center>
+          <center><h4><%=product.description%></h4></center>
+        </div></center><br/>
+      <%end%>
+    </div>
+  <%end%>
+</div>
