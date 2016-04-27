@@ -388,7 +388,26 @@
      *
      */
     _getState: function(stateName) {
-      var array = {"CAkasich": 0, "CAtrump": 0, "CAcruz":0, "IAtrump": 1, "IAcruz": 2, "IAkasich": 3};
+      var array = {"CAkasich": 0, "CAtrump": 0, "CAcruz":0, 
+      "IAtrump": 7, "IAcruz": 8, "IAkasich": 1, "NHtrump": 11, "NHcruz": 3, "NHkasich": 4, 
+      "SCtrump": 50, "SCcruz": 0, "SCkasich": 0, "NVtrump": 14, "NVcruz": 6, "NVkasich": 1, 
+      "MAtrump": 22, "MAcruz": 4, "MAkasich": 8, "TNtrump": 33, "TNcruz": 16, "TNkasich": 0, 
+      "TXtrump": 48, "TXcruz": 104, "TXkasich": 0, "MNtrump": 8, "MNcruz": 13, "MNkasich": 0, 
+      "ALtrump": 36, "ALcruz": 13, "ALkasich": 0, "AKtrump": 11, "AKcruz": 12, "AKkasich": 0, 
+      "ARtrump": 16, "ARcruz": 15, "ARkasich": 0, "GAtrump": 42, "GAcruz": 18, "GAkasich": 0, 
+      "OKtrump": 13, "OKcruz": 15, "OKkasich": 0, "VTtrump": 8, "VTcruz": 0, "VTkasich": 8, 
+      "VAtrump": 17, "VAcruz": 8, "VAkasich": 5, "KStrump": 9, "KScruz": 24, "KSkasich": 1, 
+      "KYtrump": 17, "KYcruz": 15, "KYkasich": 7, "LAtrump": 18, "LAcruz": 18, "LAkasich": 0, 
+      "MEtrump": 9, "MEcruz": 12, "MEkasich": 2, "HItrump": 11, "HIcruz": 7, "HIkasich": 0, 
+      "MItrump": 25, "MIcruz": 17, "MIkasich": 17, "IDtrump": 12, "IDcruz": 20, "IDkasich": 0, 
+      "MStrump": 25, "MScruz": 15, "MSkasich": 0, "WYtrump": 1, "WYcruz": 23, "WYkasich": 0, 
+      "ILtrump": 54, "ILcruz": 9, "ILkasich": 6, "NCtrump": 29, "NCcruz": 27, "NCkasich": 9, 
+      "OHtrump": 0, "OHcruz": 0, "OHkasich": 66, "FLtrump": 99, "FLcruz": 0, "FLkasich": 0, 
+      "MOtrump": 37, "MOcruz": 15, "MOkasich": 0, "AZtrump": 58, "AZcruz": 0, "AZkasich": 0, 
+      "UTtrump": 0, "UTcruz": 40, "UTkasich": 0, "WItrump": 6, "WIcruz": 36, "WIkasich": 0, 
+      "NYtrump": 89, "NYcruz": 0, "NYkasich": 4, "CTtrump": 28, "CTcruz": 0, "CTkasich": 0, 
+      "DEtrump": 16, "DEcruz": 0, "DEkasich": 0, "MDtrump": 35, "MDcruz": 0, "MDkasich": 0, 
+      "PAtrump": 17, "PAcruz": 0, "PAkasich": 0, "RItrump": 9, "RIcruz": 1, "RIkasich": 5};
       var stateShape = this.stateShapes[stateName];
       var stateHitArea = this.stateHitAreas[stateName];
       var labelBacking = this.labelShapes[stateName];
