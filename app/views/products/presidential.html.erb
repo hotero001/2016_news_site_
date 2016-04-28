@@ -53,6 +53,13 @@
   #Menu li:hover ul {
     display: block;
   }
+  ul.share-buttons{
+    list-style: none;
+    padding: 0;
+  }
+  ul.share-buttons li{
+    display: inline;
+  }
 </style>
 </head>
 
@@ -88,7 +95,15 @@
   <h2>Presidential Race</h2>
 </div>
 </center>
-<br/><br/>
+<br/>
+<center>
+    <ul class="share-buttons">
+  <li><a href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Fwww.2016gopelections.com&t=" title="Share on Facebook" target="_blank" onclick="window.open('https://www.facebook.com/sharer/sharer.php?u=' + encodeURIComponent(document.URL) + '&t=' + encodeURIComponent(document.URL)); return false;"><%= image_tag "/assets/Facebook.png"%></a></li>
+  <li><a href="https://twitter.com/intent/tweet?source=http%3A%2F%2Fwww.2016gopelections.com&text=:%20http%3A%2F%2Fwww.2016gopelections.com&via=2016gopelections" target="_blank" title="Tweet" onclick="window.open('https://twitter.com/intent/tweet?text=' + encodeURIComponent(document.title) + ':%20'  + encodeURIComponent(document.URL)); return false;"><%= image_tag "/assets/Twitter.png"%></a></li>
+  <li><a href="http://www.linkedin.com/shareArticle?mini=true&url=http%3A%2F%2Fwww.2016gopelections.com&title=&summary=&source=http%3A%2F%2Fwww.2016gopelections.com" target="_blank" title="Share on LinkedIn" onclick="window.open('http://www.linkedin.com/shareArticle?mini=true&url=' + encodeURIComponent(document.URL) + '&title=' +  encodeURIComponent(document.title)); return false;"><%= image_tag "/assets/CA.png"%></a></li>
+    </ul>
+</center>
+<br/>
 
 <div class="top-stories">
   <div class='one-third column'>

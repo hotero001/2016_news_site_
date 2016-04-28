@@ -413,7 +413,7 @@
       "WAtrump": 0, "WAcruz": 0, "WAkasich": 0, "CAtrump": 0, "CAcruz": 0, "CAkasich": 0, 
       "MTtrump": 0, "MTcruz": 0, "MTkasich": 0, "NJtrump": 0, "NJcruz": 0, "NJkasich": 0, 
       "NMtrump": 0, "NMcruz": 0, "NMkasich": 0, "SDtrump": 0, "SDcruz": 0, "SDkasich": 0,
-      "NDtrump": 0, "NDcruz": 0, "NDkasich": 0};
+      "NDtrump": 0, "NDcruz": 0, "NDkasich": 0, "COtrump": 0, "COcruz": 0, "COkasich": 0};
       var stateShape = this.stateShapes[stateName];
       var stateHitArea = this.stateHitAreas[stateName];
       var labelBacking = this.labelShapes[stateName];
