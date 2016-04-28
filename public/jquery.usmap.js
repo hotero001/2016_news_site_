@@ -407,7 +407,12 @@
       "UTtrump": 0, "UTcruz": 40, "UTkasich": 0, "WItrump": 6, "WIcruz": 36, "WIkasich": 0, 
       "NYtrump": 89, "NYcruz": 0, "NYkasich": 4, "CTtrump": 28, "CTcruz": 0, "CTkasich": 0, 
       "DEtrump": 16, "DEcruz": 0, "DEkasich": 0, "MDtrump": 35, "MDcruz": 0, "MDkasich": 0, 
-      "PAtrump": 17, "PAcruz": 0, "PAkasich": 0, "RItrump": 9, "RIcruz": 1, "RIkasich": 5};
+      "PAtrump": 17, "PAcruz": 0, "PAkasich": 0, "RItrump": 9, "RIcruz": 1, "RIkasich": 5, 
+      "INtrump": 0, "INcruz": 0, "INkasich": 0, "NEtrump": 0, "NEcruz": 0, "NEkasich": 0, 
+      "WVtrump": 0, "WVcruz": 0, "WVkasich": 0, "ORtrump": 0, "ORcruz": 0, "ORkasich": 0, 
+      "WAtrump": 0, "WAcruz": 0, "WAkasich": 0, "CAtrump": 0, "CAcruz": 0, "CAkasich": 0, 
+      "MTtrump": 0, "MTcruz": 0, "MTkasich": 0, "NJtrump": 0, "NJcruz": 0, "NJkasich": 0, 
+      "NMtrump": 0, "NMcruz": 0, "NMkasich": 0, "SDtrump": 0, "SDcruz": 0, "SDkasich": 0};
       var stateShape = this.stateShapes[stateName];
       var stateHitArea = this.stateHitAreas[stateName];
       var labelBacking = this.labelShapes[stateName];
